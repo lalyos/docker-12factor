@@ -1,17 +1,4 @@
 #!/bin/bash
 
-cat > /var/www/html/index.nginx-debian.html <<EOF
-<html>
-<body bgcolor="$COLOR">
-<h1>$TITLE</h1>
-
-$BODY
-
-<hr/>
-hostname: $HOSTNAME
-</body>
-</html>
-EOF
-
-
+printf "\033[44m%s\033[49m\n" $HOSTNAME > /var/www/html/index.html
 nginx -g "daemon off;"
