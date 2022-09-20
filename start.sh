@@ -1,6 +1,7 @@
 #!/bin/bash
 
-cat > /var/www/html/index.nginx-debian.html <<EOF
+#cat > /var/www/html/index.html <<EOF
+cat > /usr/share/nginx/html/index.html <<EOF
 <html>
 <body bgcolor="$COLOR">
 <h1>$TITLE</h1>
