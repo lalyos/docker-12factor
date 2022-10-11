@@ -1,8 +1,5 @@
 FROM nginx:alpine
 RUN apk add bash
-ENV TITLE=Welcome
-ENV BODY="Please use BODY/TITLE/COLOR env variables"
-ENV COLOR=lightblue
 COPY readiness.js /etc/nginx/njs/
 COPY nginx.conf /etc/nginx/
 COPY start.sh /

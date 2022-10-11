@@ -1,5 +1,31 @@
 #!/bin/bash
 
+# usage: file_env VAR [DEFAULT]
+#    ie: file_env 'XYZ_DB_PASSWORD' 'example'
+# (will allow for "$XYZ_DB_PASSWORD_FILE" to fill in the value of
+#  "$XYZ_DB_PASSWORD" from a file, especially for Docker's secrets feature)
+file_env() {
+	local var="$1"
+	local fileVar="${var}_FILE"
+	local def="${2:-}"
+	if [ "${!var:-}" ] && [ "${!fileVar:-}" ]; then
+		mysql_error "Both $var and $fileVar are set (but are exclusive)"
+	fi
+	local val="$def"
+	if [ "${!var:-}" ]; then
+		val="${!var}"
+	elif [ "${!fileVar:-}" ]; then
+		val="$(< "${!fileVar}")"
+	fi
+	export "$var"="$val"
+	unset "$fileVar"
+}
+
+file_env FAIL 0
+file_env TITLE Welcome
+file_env COLOR lightblue
+file_env COLOR2
+file_env BODY "Please use BODY/TITLE/COLOR env variables (COLOR2 for gradient)"
 
 echo -n "${FAIL:=0}" > /tmp/fail
 chown nginx:nginx /tmp/fail
