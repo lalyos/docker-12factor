@@ -3,9 +3,15 @@
 
 echo -n "${FAIL:=0}" > /tmp/fail
 chown nginx:nginx /tmp/fail
+
+if [[ ! "$BODYSTYLE" ]]; then 
+  BODYSTYLE="background: ${COLOR}"
+  [ -z $COLOR2 ] || BODYSTLE="background: linear-gradient(${COLOR}, 80%, ${COLOR2})"
+fi
+
 cat > /usr/share/nginx/html/index.html <<EOF
 <html>
-<body bgcolor="$COLOR">
+<body style="${BODYSTYLE};">
 <h1>$TITLE</h1>
 
 $BODY
