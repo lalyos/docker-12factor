@@ -32,7 +32,7 @@ chown nginx:nginx /tmp/fail
 
 if [[ ! "$BODYSTYLE" ]]; then 
   BODYSTYLE="background: ${COLOR}"
-  [ -z $COLOR2 ] || BODYSTLE="background: linear-gradient(${COLOR}, 80%, ${COLOR2})"
+  [ -z $COLOR2 ] || BODYSTYLE="background: linear-gradient(${COLOR}, 80%, ${COLOR2})"
 fi
 
 cat > /usr/share/nginx/html/index.html <<EOF
