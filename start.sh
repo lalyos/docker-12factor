@@ -16,6 +16,8 @@ $BODY
 
 <hr/>
 hostname: $HOSTNAME
+<hr/>
+(K)Kopiralyt Szigma.academy
 </body>
 </html>
 EOF
