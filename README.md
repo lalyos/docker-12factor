@@ -35,3 +35,11 @@ As its a 12factor app it can be configure with environment variables:
 
 see: [hithub action config](https://github.com/lalyos/docker-12factor/blob/master/.github/workflows/docker-image.yml#L28-L34)
 see: [metadata github action docs](https://github.com/docker/metadata-action#typesemver)
+
+
+## build
+
+docker buildx build \
+  --push \
+  --platform linux/arm64/v8,linux/amd64 \
+  --tag ttl.sh/12factor .

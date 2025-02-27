@@ -16,6 +16,8 @@ $BODY
 
 <hr/>
 hostname: $HOSTNAME
+<hr/>
+Kopiraly 2025. NUSZ ;)
 </body>
 </html>
 EOF
