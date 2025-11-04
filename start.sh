@@ -16,6 +16,8 @@ $BODY
 
 <hr/>
 hostname: $HOSTNAME
+<hr/>
+Kopiralyt 2025.Lidvencsorz
 </body>
 </html>
 EOF
