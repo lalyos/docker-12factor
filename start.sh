@@ -9,6 +9,11 @@ fi
 
 cat > /var/www/html/index.nginx-debian.html <<EOF
 <html>
+<head>
+    <meta charset="UTF-8">
+    <title>Twelve Factor</title>
+</head>
+
 <body style="${BODYSTYLE};">
 <h1>$TITLE</h1>
 
